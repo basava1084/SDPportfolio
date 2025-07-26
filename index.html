@@ -1,288 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Basavaraj H G Portfolio</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: 'Arial', sans-serif;
-        color: #2c2c2c;
-        line-height: 1.6;
-        padding: 20px;
-        min-height: 100vh;
-        background-image: url('https://imgcdn.stablediffusionweb.com/2024/3/23/68445cc8-2951-493a-814f-6f09d6b93ca7.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        /* overlay to darken background so text stands out */
-        position: relative;
-      }
-      body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.45);
-        z-index: -1;
-      }
-      header {
-        text-align: center;
-        margin-bottom: 40px;
-        background: rgba(255 255 255 / 0.85);
-        padding: 20px 40px;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        max-width: 700px;
-        width: 100%;
-      }
-      header h1 {
-        font-size: 3rem;
-        color: #ec1250;
-        font-weight: 700;
-        margin: 0.1em 0;
-      }
-      header p {
-        font-size: 1.4rem;
-        color: #3e8e0b;
-        font-weight: 600;
-      }
-      main {
-        background: rgba(255 255 255 / 0.90);
-        max-width: 900px;
-        width: 100%;
-        border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-        padding: 30px 40px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basavaraj H G — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #eef1f5);
+      color: #2d2d2d;
+      line-height: 1.6;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      background: #ffffffee;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
+      margin: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ec1250;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #4a4a4a;
+      margin-top: 10px;
+    }
+    .profile {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ec1250;
+      box-shadow: 0 4px 20px rgba(236, 18, 80, 0.4);
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-info h2 {
+      font-size: 2rem;
+      color: #7a1e3f;
+      margin-bottom: 15px;
+    }
+    .profile-info p {
+      font-size: 1.05rem;
+      color: #333;
+    }
+    .button {
+      display: inline-block;
+      background: #ec1250;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 40px;
+      margin-top: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background: #b10f3e;
+      transform: translateY(-2px);
+    }
+    .contact-info {
+      margin-top: 40px;
+    }
+    .contact-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #b10f3e;
+    }
+    .contact-item {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    .contact-item a {
+      color: #b10f3e;
+      text-decoration: none;
+    }
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #777;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 768px) {
       .profile {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        margin-bottom: 50px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
       }
       .profile-img {
-        flex-shrink: 0;
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid #ec1250;
-        box-shadow: 0 4px 20px rgba(236, 18, 80, 0.5);
+        margin-bottom: 20px;
       }
-      .profile-info {
-        flex: 1;
-        font-size: 1.15rem;
-        color: #422b33;
-      }
-      .profile-info h2 {
-        font-size: 2.2rem;
-        margin-bottom: 15px;
-        color: #7a1e3f;
-      }
-      .profile-info p {
-        margin-bottom: 25px;
-        line-height: 1.7;
-      }
-      .button {
-        background: #ec1250;
-        color: #fff;
-        padding: 14px 33px;
-        border: none;
-        border-radius: 50px;
-        font-size: 1.15rem;
-        text-transform: uppercase;
-        font-weight: 700;
-        cursor: pointer;
-        transition: background 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 4px 14px rgba(236, 18, 80, 0.45);
-      }
-      .button:hover,
-      .button:focus {
-        background: #b10f3e;
-        transform: translateY(-4px);
-        outline: none;
-      }
-      section.contact-info {
-        background: rgba(255 255 255 / 0.85);
-        padding: 25px 35px;
-        border-radius: 15px;
-        max-width: 700px;
-        width: 100%;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        color: #ec1250;
-        margin: 0 auto;
-      }
-      section.contact-info h1 {
-        font-size: 2.4rem;
-        margin-bottom: 25px;
-        font-weight: 700;
-        color: #b10f3e;
-        text-align: center;
-      }
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-      }
-      .contact-item i {
-        font-size: 1.5rem;
-      }
-      .contact-item a {
-        color: #b10f3e;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-      .contact-item a:hover,
-      .contact-item a:focus {
-        color: #ec1250;
-        text-decoration: underline;
-        outline: none;
-      }
-      footer {
-        text-align: center;
-        margin-top: 50px;
-        font-size: 1.05rem;
-        color: #d71919;
-        max-width: 900px;
-        width: 100%;
-      }
-      footer a {
-        color: #e11d1d99;
-        text-decoration: none;
-        font-weight: 600;
-      }
-      footer a:hover,
-      footer a:focus {
-        text-decoration: underline;
-        outline: none;
-      }
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 2.5rem;
-        }
-        .profile {
-          flex-direction: column;
-          text-align: center;
-        }
-        .profile-img {
-          width: 150px;
-          height: 150px;
-          margin: 0 auto 25px auto;
-          border-width: 3px;
-        }
-        .profile-info {
-          padding: 0 10px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header role="banner">
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
       <h1>Basavaraj H G</h1>
-      <p>Programmer | Designer</p>
+      <p>Web Developer | UI Designer | Tech Enthusiast</p>
     </header>
 
-    <main>
-      <section class="profile" aria-label="About Me">
-        <img
-          class="profile-img"
-          src="https://avatars.githubusercontent.com/u/000000?v=4"
-          alt="Basavaraj H G smiling"
-          aria-hidden="true"
-        />
-        <div class="profile-info">
-          <h2>About Me</h2>
-          <p>
-            Hi! I'm Basavaraj H G, a passionate web developer with a keen eye
-            for design. I specialize in creating intuitive, responsive, and
-            beautiful websites using the latest technologies. I am committed
-            to crafting user-friendly experiences that make a difference.
-          </p>
-          <button class="button" onclick="downloadResume()" aria-label="Download Basavaraj H G resume">
-            Download Resume
-          </button>
-        </div>
-      </section>
+    <section class="profile">
+      <img class="profile-img" src="your-photo.jpg" alt="Profile Photo of Basavaraj H G" />
+      <div class="profile-info">
+        <h2>About Me</h2>
+        <p>
+          I am a passionate web developer with a strong focus on modern UI design and functionality.
+          I love crafting seamless digital experiences with clean, intuitive interfaces using the latest technologies.
+        </p>
+        <a href="https://drive.google.com/file/d/1txm_7PwTQd3e6kXgRKAL-7ZfzYAJckDK/view?usp=drivesdk" target="_blank" class="button">Download Resume</a>
+      </div>
+    </section>
 
-      <section class="contact-info" aria-label="Contact Information">
-        <h1>Contact Me</h1>
+    <section class="contact-info">
+      <h3>Contact Me</h3>
+      <div class="contact-item">📞 <a href="tel:+917411278970">+91 7411278970</a></div>
+      <div class="contact-item">📸 <a href="https://www.instagram.com/basava_1804" target="_blank">Instagram</a></div>
+      <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/basavaraj-h-g-565a51342" target="_blank">LinkedIn</a></div>
+      <div class="contact-item">🐱 <a href="https://github.com/basava1084" target="_blank">GitHub</a></div>
+      <div class="contact-item">✉️ <a href="mailto:basavarajhg8970@gmail.com">basavarajhg8970@gmail.com</a></div>
+    </section>
 
-        <div class="contact-item">
-          <i aria-hidden="true">📞</i>
-          <a href="tel:+917411278970" rel="nofollow">+91 7411278970</a>
-        </div>
-
-        <div class="contact-item">
-          <i aria-hidden="true">📸</i>
-          <a
-            href="https://www.instagram.com/basava_1804?igsh=MWc3dWdoN25jemZybQ=="
-            target="_blank"
-            rel="noopener noreferrer"
-            >Instagram</a
-          >
-        </div>
-
-        <div class="contact-item">
-          <i aria-hidden="true">🔗</i>
-          <a
-            href="https://www.linkedin.com/in/basavaraj-h-g-565a51342"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
-        </div>
-
-        <div class="contact-item">
-          <i aria-hidden="true">🐱</i>
-          <a
-            href="https://github.com/basava1084"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
-        </div>
-      </section>
-    </main>
-
-    <footer role="contentinfo">
-      <p>
-        Contact me:
-        <a href="mailto:basavarajhg8970@gmail.com">basavarajhg8970@gmail.com</a>
-        |
-        LinkedIn:
-        <a
-          href="https://www.linkedin.com/in/basavaraj-h-g-565a51342"
-          target="_blank"
-          rel="noopener noreferrer"
-          >linkedin.com/in/BasavarajH G</a
-        >
-      </p>
-      <p>© 2025 Basavaraj H G. All rights reserved.</p>
+    <footer>
+      <p>&copy; 2025 Basavaraj H G. All rights reserved.</p>
     </footer>
-
-    <script>
-      function downloadResume() {
-        // Open resume PDF in a new tab instead of forcing download 
-        // (because Google Drive links do not allow direct download easily)
-        const resumeUrl =
-          'https://drive.google.com/file/d/1txm_7PwTQd3e6kXgRKAL-7ZfzYAJckDK/view?usp=drivesdk';
-        window.open(resumeUrl, '_blank', 'noopener,noreferrer');
-      }
-    </script>
-  </body>
+  </div>
+</body>
 </html>
