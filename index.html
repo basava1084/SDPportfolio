@@ -4,190 +4,325 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Basavaraj H G Portfolio</title>
+    <meta name="description" content="Basavaraj H G - Professional Web Developer and Designer Portfolio" />
+    <meta name="author" content="Basavaraj H G" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto&display=swap" rel="stylesheet" />
     <style>
-      * {
+      html, body {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        min-height: 100vh;
       }
       body {
-        font-family: 'Arial', sans-serif;
-        color: #2c2c2c;
+        font-family: 'Poppins', Arial, sans-serif;
+        /* Gradient background for a modern professional look */
+        background: linear-gradient(120deg, #141e30 0%, #243b55 100%);
+        color: #232946;
         line-height: 1.6;
-        padding: 20px;
-        min-height: 100vh;
-        background-image: url('https://imgcdn.stablediffusionweb.com/2024/3/23/68445cc8-2951-493a-814f-6f09d6b93ca7.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        /* overlay to darken background so text stands out */
         position: relative;
       }
-      body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.45);
-        z-index: -1;
+      a {
+        text-decoration: none;
+        color: inherit;
       }
+      a:focus, button:focus { outline: 2px solid #f46036; outline-offset: 2px;}
+      img { display: block; max-width: 100%;}
+      .container {
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 30px 16px 60px;
+      }
+      /* Header & Nav */
       header {
+        margin: 2em auto 1.5em;
+        padding: 18px 32px;
+        background: #fff;
+        box-shadow: 0 6px 18px rgba(36,59,85,.09);
+        border-radius: 16px;
         text-align: center;
-        margin-bottom: 40px;
-        background: rgba(255 255 255 / 0.85);
-        padding: 20px 40px;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        max-width: 700px;
-        width: 100%;
+        animation: slideInDown 0.7s cubic-bezier(.23,1.08,.58,.89) forwards;
       }
       header h1 {
-        font-size: 3rem;
-        color: #ec1250;
+        font-size: 2.7rem;
         font-weight: 700;
-        margin: 0.1em 0;
+        color: #f46036;
+        margin-bottom: 0.1em;
+        letter-spacing: 0.03em;
       }
       header p {
-        font-size: 1.4rem;
-        color: #3e8e0b;
+        font-size: 1.21rem;
         font-weight: 600;
+        color: #243b55bd;
       }
-      main {
-        background: rgba(255 255 255 / 0.90);
-        max-width: 900px;
-        width: 100%;
-        border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-        padding: 30px 40px;
+      nav {
+        margin: 1.4em 0;
       }
+      nav a {
+        display: inline-block;
+        margin: 0 12px;
+        font-weight: 600;
+        font-size: 1.06rem;
+        color: #232946;
+        padding: 6px 11px;
+        border-radius: 8px;
+        transition: background 0.2s, color 0.2s;
+      }
+      nav a:hover, nav a:focus, nav a.active {
+        background: #f46036;
+        color: #fff;
+      }
+      /* Profile Section */
       .profile {
         display: flex;
         align-items: center;
         gap: 40px;
-        margin-bottom: 50px;
         flex-wrap: wrap;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 6px 30px rgba(36,59,85,.09);
+        padding: 34px 28px;
+        margin-bottom: 45px;
+        animation: fadeInUp 1s .25s forwards;
+        opacity:0;
       }
       .profile-img {
-        flex-shrink: 0;
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
+        width: 150px;
+        height: 150px;
         object-fit: cover;
-        border: 4px solid #ec1250;
-        box-shadow: 0 4px 20px rgba(236, 18, 80, 0.5);
+        border-radius: 50%;
+        border: 5px solid #f46036;
+        background: #e1e8ef;
+        box-shadow: 0 4px 18px #f4603633;
+        flex-shrink: 0;
+        transition: transform 0.3s;
       }
+      .profile-img:hover { transform: scale(1.04);}
       .profile-info {
         flex: 1;
-        font-size: 1.15rem;
-        color: #422b33;
+        font-size: 1.16rem;
+        color: #232946;
       }
       .profile-info h2 {
-        font-size: 2.2rem;
-        margin-bottom: 15px;
-        color: #7a1e3f;
+        font-size: 2.1rem;
+        margin-bottom: 12px;
+        color: #243b55;
+        font-weight: 700;
       }
       .profile-info p {
-        margin-bottom: 25px;
+        margin-bottom: 26px;
         line-height: 1.7;
       }
       .button {
-        background: #ec1250;
+        background: #f46036;
         color: #fff;
-        padding: 14px 33px;
+        padding: 14px 36px;
         border: none;
         border-radius: 50px;
-        font-size: 1.15rem;
+        font-size: 1.14rem;
         text-transform: uppercase;
         font-weight: 700;
         cursor: pointer;
-        transition: background 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 4px 14px rgba(236, 18, 80, 0.45);
+        box-shadow: 0 5px 20px #f4603644;
+        transition: background 0.2s, transform 0.2s;
+        user-select: none;
       }
-      .button:hover,
-      .button:focus {
-        background: #b10f3e;
-        transform: translateY(-4px);
-        outline: none;
+      .button:hover, .button:focus {
+        background: #c32f13;
+        transform: translateY(-2px);
       }
-      section.contact-info {
-        background: rgba(255 255 255 / 0.85);
-        padding: 25px 35px;
-        border-radius: 15px;
-        max-width: 700px;
-        width: 100%;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        color: #ec1250;
-        margin: 0 auto;
+      /* Skills Section */
+      .skills {
+        margin-top: 44px;
+        background: #fff;
+        border-radius: 13px;
+        box-shadow: 0 6px 20px rgba(36,59,85,.09);
+        padding: 28px 27px;
+        animation: fadeInUp 1s 0.5s forwards;
+        opacity:0;
       }
-      section.contact-info h1 {
-        font-size: 2.4rem;
-        margin-bottom: 25px;
+      .skills h2 {
+        color: #243b55;
         font-weight: 700;
-        color: #b10f3e;
+        font-size: 2.04rem;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+      .skill-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 22px;
+        margin-bottom: 8px;
+      }
+      .skill-item {
+        background: #f9fafb;
+        border-radius: 11px;
+        padding: 14px 24px;
+        box-shadow: 0 2px 10px #f4603622;
+        font-weight: 600;
+        font-size: 1.09rem;
+        color: #f46036;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 120px;
+        justify-content: center;
+        transition: transform 0.2s;
+      }
+      .skill-item svg {
+        width: 22px;
+        height: 22px;
+        fill: #f46036;
+      }
+      .skill-item:hover {
+        transform: scale(1.08);
+        background: #fff6f0;
+      }
+      /* Portfolio Section */
+      .portfolio {
+        margin-top: 48px;
+        animation: fadeInUp 1s 0.75s forwards;
+        opacity:0;
+      }
+      .portfolio h2 {
+        color: #243b55;
+        font-weight: 700;
+        font-size: 2.2rem;
+        margin-bottom: 24px;
+        text-align: center;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+        gap: 24px;
+      }
+      .project-card {
+        background: #fff;
+        border-radius: 13px;
+        box-shadow: 0 5px 20px rgba(36,59,85,.12);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.26s, box-shadow 0.26s;
+      }
+      .project-card:hover, .project-card:focus-within {
+        transform: translateY(-3px) scale(1.018);
+        box-shadow: 0 12px 32px #f4603633;
+      }
+      .project-image {
+        width: 100%;
+        border-radius: 10px;
+        height: 145px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        background: #e1e8ef;
+      }
+      .project-content h3 {
+        font-weight: 700;
+        color: #f46036;
+        margin-bottom: 6px;
+        font-size: 1.21rem;
+      }
+      .project-content p {
+        font-size: .96rem;
+        color: #222;
+        flex-grow: 1;
+        margin-bottom: 12px;
+      }
+      .project-links {
+        margin-top: auto;
+        display: flex;
+        gap: 10px;
+      }
+      .project-links a {
+        background: #243b55;
+        color: #fff;
+        padding: 7px 17px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 0.96rem;
+        transition: background 0.23s;
+      }
+      .project-links a:hover, .project-links a:focus {
+        background: #f46036;
+        color: #fff;
+      }
+      /* Contact Section */
+      .contact-info {
+        margin-top: 56px;
+        background: #fff;
+        padding: 28px 33px;
+        border-radius: 13px;
+        box-shadow: 0 6px 18px #f4603621;
+        color: #232946;
+        max-width: 950px;
+        font-size: 1.16rem;
+        animation: fadeInUp 1s 1.01s forwards;
+        opacity:0;
+      }
+      .contact-info h2 {
+        font-size: 2.18rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+        color: #243b55;
         text-align: center;
       }
       .contact-item {
         display: flex;
         align-items: center;
-        gap: 14px;
-        font-size: 1.2rem;
-        margin-bottom: 15px;
+        gap: 16px;
+        font-size: 1.12rem;
+        margin-bottom: 17px;
       }
-      .contact-item i {
-        font-size: 1.5rem;
+      .contact-item i, .contact-item svg {
+        font-size: 1.42rem;
+        color: #f46036;
+        flex-shrink: 0;
       }
       .contact-item a {
-        color: #b10f3e;
-        text-decoration: none;
-        transition: color 0.3s ease;
+        color: #f46036;
+        font-weight: 600;
+        transition: color 0.2s;
       }
-      .contact-item a:hover,
-      .contact-item a:focus {
-        color: #ec1250;
+      .contact-item a:hover, .contact-item a:focus {
+        color: #243b55;
         text-decoration: underline;
-        outline: none;
       }
+      /* Footer */
       footer {
+        margin-top: 48px;
+        padding-bottom: 35px;
         text-align: center;
-        margin-top: 50px;
-        font-size: 1.05rem;
-        color: #d71919;
-        max-width: 900px;
-        width: 100%;
+        font-size: 1.08rem;
+        color: #8991bf;
       }
       footer a {
-        color: #e11d1d99;
-        text-decoration: none;
-        font-weight: 600;
+        color: #f46036;
+        font-weight: 700;
       }
-      footer a:hover,
-      footer a:focus {
-        text-decoration: underline;
-        outline: none;
+      footer a:hover { text-decoration: underline;}
+      /* Animations */
+      @keyframes slideInDown {
+        0% { opacity:0; transform:translateY(-24px);}
+        100% { opacity:1; transform:translateY(0);}
       }
+      @keyframes fadeInUp {
+        0% { opacity:0; transform:translateY(18px);}
+        100% { opacity:1; transform:translateY(0);}
+      }
+      .profile, .skills, .portfolio, .contact-info { opacity: 0;}
+      .profile[style], .skills[style], .portfolio[style], .contact-info[style] { opacity: 1 !important;}
+      /* Responsive */
       @media (max-width: 768px) {
-        header h1 {
-          font-size: 2.5rem;
+        header h1 { font-size: 2rem;}
+        nav a { margin: 0 6px; font-size: 1rem;}
+        .profile, .skills, .portfolio, .contact-info {
+          padding: 18px 8px;
         }
-        .profile {
-          flex-direction: column;
-          text-align: center;
-        }
-        .profile-img {
-          width: 150px;
-          height: 150px;
-          margin: 0 auto 25px auto;
-          border-width: 3px;
-        }
-        .profile-info {
-          padding: 0 10px;
-        }
+        .profile { flex-direction: column; gap: 20px;}
+        .profile-img { width: 115px; height: 115px;}
+        .skills h2, .portfolio h2, .contact-info h2 { font-size: 1.32rem;}
+        .skill-list { gap: 9px;}
       }
     </style>
   </head>
@@ -195,15 +330,21 @@
     <header role="banner">
       <h1>Basavaraj H G</h1>
       <p>Programmer | Designer</p>
+      <nav aria-label="Primary Navigation">
+        <a href="#about" class="active">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <main>
-      <section class="profile" aria-label="About Me">
+    <main class="container">
+      <!-- ABOUT -->
+      <section id="about" class="profile" aria-label="About Me" style="opacity:1;">
         <img
           class="profile-img"
-          src="https://avatars.githubusercontent.com/u/000000?v=4"
+          src="my_photo.jpg"
           alt="Basavaraj H G smiling"
-          aria-hidden="true"
         />
         <div class="profile-info">
           <h2>About Me</h2>
@@ -213,76 +354,141 @@
             beautiful websites using the latest technologies. I am committed
             to crafting user-friendly experiences that make a difference.
           </p>
-          <button class="button" onclick="downloadResume()" aria-label="Download Basavaraj H G resume">
+          <button class="button" onclick="downloadResume()" aria-label="Download Resume">
             Download Resume
           </button>
         </div>
       </section>
 
-      <section class="contact-info" aria-label="Contact Information">
-        <h1>Contact Me</h1>
+      <!-- SKILLS -->
+      <section id="skills" class="skills" aria-label="Skills" style="opacity:1;">
+        <h2>Skills</h2>
+        <div class="skill-list">
+          <div tabindex="0" class="skill-item" aria-label="HTML5">
+            <svg viewBox="0 0 24 24"><path d="M1.5 0l1.86 20.77 8.61 2.41 8.53-2.41L22.5 0H1.5zm16.23 6.72l-.15 1.48-.06.6H6.51l.12 1.35h8.6l-.38 3.99-3.12.89H8.98l-.14-1.55h1.94l.13 1.3 1.49-.36.59-6.32H7.23l-.13-1.29 2.4-.24h7.23zm-8.66 14.77l-5.44-1.51-1.65-17.19h20.1l-1.67 17.19-5.43 1.51v-1.88l.02.01.03-.01.02-.01.03-.01.03-.01.02-.01.03-.01.02-.01.02-.01.04-.02.02-.01.01-.01.02-.01.02-.01.02-.01.03-.01.03-.01.03-.01.02-.01.03-.01.03-.01.03-.01.03-.01.03-.01h.01l.01-.01h.01V21.5z"></path></svg>
+            HTML5
+          </div>
+          <div tabindex="0" class="skill-item" aria-label="CSS3">
+            <svg viewBox="0 0 24 24"><path d="M12 22.095l-8.33-2.392L2 2h20l-1.67 17.703-8.33 2.392zm5.206-13.743l-.326 3.636H8.262l.21 2.365h7.876l-.418 4.653-3.93 1.127-3.927-1.127-.248-2.826h2.176l.126 1.35 1.873.536 1.87-.536.157-1.746H8.165l-.326-3.636H17.21l-.004.002z"></path></svg>
+            CSS3
+          </div>
+          <div tabindex="0" class="skill-item" aria-label="JavaScript">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.371 0 0 5.371 0 12c0 6.627 5.371 12 12 12s12-5.373 12-12c0-6.629-5.371-12-12-12zm.012 18.522c-2.766 0-4.547-1.341-4.837-3.183h2.13c.17.717.962 1.47 2.684 1.47 1.459 0 2.231-.741 2.231-1.539 0-1.183-1.421-1.313-2.436-1.583-2.351-.62-3.804-1.382-3.804-3.414 0-2.242 2.016-3.634 4.681-3.634 2.086 0 4.365.77 4.671 2.924h-2.116c-.276-.799-1.028-1.146-2.555-1.146-1.018 0-1.987.416-1.987 1.312 0 1.064 1.534 1.178 2.461 1.399 2.371.591 3.875 1.387 3.875 3.396 0 2.203-2.084 3.437-4.499 3.437zm-5.685-.516c.49-.025.924-.187 1.165-.653.256-.488.34-1.038.34-1.291v-5.16H4.89c-.201 0-.362.157-.393.35L3 16.658c-.033.198.104.384.316.424.212.04.443-.013.653-.176zm9.201.655c.46 0 .805-.187.969-.527.143-.294.319-.813.564-1.646.143-.47.511-1.59.59-1.763.073-.164.049-.252-.138-.252H13.71V9.23h2.042c.13 0 .23-.14.21-.261l-.397-2.264c-.035-.203-.204-.352-.395-.352h-3.553c-.19 0-.36.149-.395.352l-.404 2.29c-.018.117.081.235.21.235H13.29v5.479H10.68c-.201 0-.36.162-.395.353l-.404 2.288c-.018.119.08.237.212.237zm3.609-.919c.538-.034.973-.234 1.166-.572.187-.33.235-.797.235-1.012V9.23h-2.38v6.408c0 .214.047.681.236 1.012.191.343.627.543 1.143.562z"></path></svg>
+            JavaScript
+          </div>
+          <div tabindex="0" class="skill-item" aria-label="SQL">
+            <svg height="22" width="22" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="9" ry="4.5" fill="#f46036"/><ellipse cx="12" cy="12" rx="9" ry="4.5" fill="#fff"/><ellipse cx="12" cy="18.5" rx="9" ry="4.5" fill="#f46036"/></svg>
+            SQL
+          </div>
+          <div tabindex="0" class="skill-item" aria-label="Python">
+            <svg height="22" width="22" viewBox="0 0 24 24"><path d="M10 2C13.315 2 14 3.791 14 6V8H6C3.789 8 2 6.211 2 4C2 2.686 5.686 2 10 2ZM14 18C14 20.209 13.315 22 10 22C5.686 22 2 21.314 2 20C2 17.789 3.789 16 6 16H14V18ZM16 10H22C21.996 11.209 20.206 12 18 12C15.819 12 14 10.209 14 8V6C14 3.791 15.791 2 18 2C20.209 2 22 3.791 22 6C22 8.209 20.209 10 16 10ZM16 14H22C22 13.314 21.314 12 20 12C18.209 12 16 13.314 16 14Z" fill="#f46036"/></svg>
+            Python basic 
+          </div>
+          <div tabindex="0" class="skill-item" aria-label="Java Basic">
+            <svg width="22" height="22" viewBox="0 0 64 64"><ellipse cx="32" cy="53" rx="26" ry="6" fill="#f46036" opacity=".2"/><path d="M27 26c0-6 10-6 10 0 0 4-4 3-4 6 0 1 1 2 3 2M31 38c-1 2-1 3-1 4 0 2 2 3 4 3 3 0 4-2 4-4 0-2-2-3-4-3-1 0-2 1-2 2M30 49c-2 1-3 2-2 3 1 1 3 2 7 2 4 0 5-1 5-2s-2-2-4-2" stroke="#f46036" stroke-width="2" fill="none"/></svg>
+            Java (Basic)
+          </div>
+        </div>
+      </section>
 
+      <!-- PORTFOLIO -->
+      <section id="portfolio" class="portfolio" aria-label="Portfolio" style="opacity:1;">
+        <h2>Project</h2>
+        <div class="projects-grid" role="list">
+          <!-- Your Expenses Tracker Project -->
+          <article class="project-card" tabindex="0" role="listitem">
+            <img class="project-image"
+              src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=70"
+              alt="Screenshot of Expenses Tracker Project"
+              loading="lazy" />
+            <div class="project-content">
+              <h3>Expenses Tracker Web App</h3>
+              <p>
+                A full-featured personal finance tracker deployed on Render.<br />
+                👉 Add, view, edit, and delete transactions <br />
+                👉 Track your expenses and visualize balance <br />
+                👉 Built using HTML, CSS, JS, Express, SQL, and deployed live.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/basava1084/my-expenses-tracker" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://my-expenses-tracker-b4ss.onrender.com/login" target="_blank" rel="noopener">Live Demo</a>
+              </div>
+            </div>
+          </article>
+          <!-- You can add more projects below! -->
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact-info" aria-label="Contact Section" style="opacity:1;">
+        <h2>Contact Me</h2>
         <div class="contact-item">
-          <i aria-hidden="true">📞</i>
+          <i aria-hidden="true" title="Phone">📞</i>
           <a href="tel:+917411278970" rel="nofollow">+91 7411278970</a>
         </div>
-
         <div class="contact-item">
-          <i aria-hidden="true">📸</i>
-          <a
-            href="https://www.instagram.com/basava_1804?igsh=MWc3dWdoN25jemZybQ=="
-            target="_blank"
-            rel="noopener noreferrer"
-            >Instagram</a
-          >
+          <i aria-hidden="true" title="Instagram">📸</i>
+          <a href="https://www.instagram.com/basava_1804?igsh=MWc3dWdoN25jemZybQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
-
         <div class="contact-item">
-          <i aria-hidden="true">🔗</i>
-          <a
-            href="https://www.linkedin.com/in/basavaraj-h-g-565a51342"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
+          <i aria-hidden="true" title="LinkedIn">🔗</i>
+          <a href="https://www.linkedin.com/in/basavaraj-h-g-565a51342" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-
         <div class="contact-item">
-          <i aria-hidden="true">🐱</i>
-          <a
-            href="https://github.com/basava1084"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
+          <i aria-hidden="true" title="GitHub">🐱</i>
+          <a href="https://github.com/basava1084" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <div class="contact-item">
+          <i aria-hidden="true" title="Email">✉️</i>
+          <a href="mailto:basavarajhg8970@gmail.com">basavarajhg8970@gmail.com</a>
         </div>
       </section>
     </main>
 
     <footer role="contentinfo">
       <p>
-        Contact me:
-        <a href="mailto:basavarajhg8970@gmail.com">basavarajhg8970@gmail.com</a>
+        &copy; 2025 Basavaraj H G. All rights reserved.<br>
+        Connect with me:
+        <a href="https://www.linkedin.com/in/basavaraj-h-g-565a51342" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         |
-        LinkedIn:
-        <a
-          href="https://www.linkedin.com/in/basavaraj-h-g-565a51342"
-          target="_blank"
-          rel="noopener noreferrer"
-          >linkedin.com/in/BasavarajH G</a
-        >
+        <a href="https://github.com/basava1084" target="_blank" rel="noopener noreferrer">GitHub</a>
       </p>
-      <p>© 2025 Basavaraj H G. All rights reserved.</p>
     </footer>
 
     <script>
       function downloadResume() {
-        // Open resume PDF in a new tab instead of forcing download 
-        // (because Google Drive links do not allow direct download easily)
-        const resumeUrl =
-          'https://drive.google.com/file/d/1txm_7PwTQd3e6kXgRKAL-7ZfzYAJckDK/view?usp=drivesdk';
-        window.open(resumeUrl, '_blank', 'noopener,noreferrer');
+        window.open('https://drive.google.com/file/d/1txm_7PwTQd3e6kXgRKAL-7ZfzYAJckDK/view?usp=drivesdk', '_blank', 'noopener,noreferrer');
       }
+      // Animate in on load (minimal JS since already set style="opacity:1;" for demo)
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.profile, .skills, .portfolio, .contact-info').forEach(el => el.style.opacity = 1);
+      });
+      // Active nav highlighting on scroll
+      const navLinks = document.querySelectorAll('nav a');
+      const sections = document.querySelectorAll('main section');
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100; // header height buffer
+          const sectionHeight = section.clientHeight;
+          if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+      navLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href').slice(1);
+          document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+        });
+      });
     </script>
   </body>
-</html> 
+</html>
