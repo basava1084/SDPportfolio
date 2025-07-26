@@ -15,7 +15,6 @@
       }
       body {
         font-family: 'Poppins', Arial, sans-serif;
-        /* Gradient background for a modern professional look */
         background: linear-gradient(120deg, #141e30 0%, #243b55 100%);
         color: #232946;
         line-height: 1.6;
@@ -32,7 +31,6 @@
         margin: 0 auto;
         padding: 30px 16px 60px;
       }
-      /* Header & Nav */
       header {
         margin: 2em auto 1.5em;
         padding: 18px 32px;
@@ -71,7 +69,6 @@
         background: #f46036;
         color: #fff;
       }
-      /* Profile Section */
       .profile {
         display: flex;
         align-items: center;
@@ -84,23 +81,14 @@
         margin-bottom: 45px;
         animation: fadeInUp 1s .25s forwards;
         opacity:0;
+        /* No profile image, so layout stays column for mobile and max width for text */
+        justify-content: center;
       }
-      .profile-img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 5px solid #f46036;
-        background: #e1e8ef;
-        box-shadow: 0 4px 18px #f4603633;
-        flex-shrink: 0;
-        transition: transform 0.3s;
-      }
-      .profile-img:hover { transform: scale(1.04);}
       .profile-info {
         flex: 1;
         font-size: 1.16rem;
         color: #232946;
+        text-align: left;
       }
       .profile-info h2 {
         font-size: 2.1rem;
@@ -130,7 +118,7 @@
         background: #c32f13;
         transform: translateY(-2px);
       }
-      /* Skills Section */
+      /* ...rest of the CSS remains the same as previously provided (skills, portfolio, contact-info, footer, animations, responsive rules) ... */
       .skills {
         margin-top: 44px;
         background: #fff;
@@ -178,7 +166,6 @@
         transform: scale(1.08);
         background: #fff6f0;
       }
-      /* Portfolio Section */
       .portfolio {
         margin-top: 48px;
         animation: fadeInUp 1s 0.75s forwards;
@@ -247,7 +234,6 @@
         background: #f46036;
         color: #fff;
       }
-      /* Contact Section */
       .contact-info {
         margin-top: 56px;
         background: #fff;
@@ -288,7 +274,6 @@
         color: #243b55;
         text-decoration: underline;
       }
-      /* Footer */
       footer {
         margin-top: 48px;
         padding-bottom: 35px;
@@ -301,7 +286,6 @@
         font-weight: 700;
       }
       footer a:hover { text-decoration: underline;}
-      /* Animations */
       @keyframes slideInDown {
         0% { opacity:0; transform:translateY(-24px);}
         100% { opacity:1; transform:translateY(0);}
@@ -312,7 +296,6 @@
       }
       .profile, .skills, .portfolio, .contact-info { opacity: 0;}
       .profile[style], .skills[style], .portfolio[style], .contact-info[style] { opacity: 1 !important;}
-      /* Responsive */
       @media (max-width: 768px) {
         header h1 { font-size: 2rem;}
         nav a { margin: 0 6px; font-size: 1rem;}
@@ -320,7 +303,6 @@
           padding: 18px 8px;
         }
         .profile { flex-direction: column; gap: 20px;}
-        .profile-img { width: 115px; height: 115px;}
         .skills h2, .portfolio h2, .contact-info h2 { font-size: 1.32rem;}
         .skill-list { gap: 9px;}
       }
@@ -341,11 +323,6 @@
     <main class="container">
       <!-- ABOUT -->
       <section id="about" class="profile" aria-label="About Me" style="opacity:1;">
-        <img
-          class="profile-img"
-          src="C:\BASAVARAJ\portfolio\images"
-          alt="Basavaraj H G smiling"
-        />
         <div class="profile-info">
           <h2>About Me</h2>
           <p>
@@ -382,7 +359,7 @@
           </div>
           <div tabindex="0" class="skill-item" aria-label="Python">
             <svg height="22" width="22" viewBox="0 0 24 24"><path d="M10 2C13.315 2 14 3.791 14 6V8H6C3.789 8 2 6.211 2 4C2 2.686 5.686 2 10 2ZM14 18C14 20.209 13.315 22 10 22C5.686 22 2 21.314 2 20C2 17.789 3.789 16 6 16H14V18ZM16 10H22C21.996 11.209 20.206 12 18 12C15.819 12 14 10.209 14 8V6C14 3.791 15.791 2 18 2C20.209 2 22 3.791 22 6C22 8.209 20.209 10 16 10ZM16 14H22C22 13.314 21.314 12 20 12C18.209 12 16 13.314 16 14Z" fill="#f46036"/></svg>
-            Python basic 
+            Python
           </div>
           <div tabindex="0" class="skill-item" aria-label="Java Basic">
             <svg width="22" height="22" viewBox="0 0 64 64"><ellipse cx="32" cy="53" rx="26" ry="6" fill="#f46036" opacity=".2"/><path d="M27 26c0-6 10-6 10 0 0 4-4 3-4 6 0 1 1 2 3 2M31 38c-1 2-1 3-1 4 0 2 2 3 4 3 3 0 4-2 4-4 0-2-2-3-4-3-1 0-2 1-2 2M30 49c-2 1-3 2-2 3 1 1 3 2 7 2 4 0 5-1 5-2s-2-2-4-2" stroke="#f46036" stroke-width="2" fill="none"/></svg>
@@ -393,9 +370,8 @@
 
       <!-- PORTFOLIO -->
       <section id="portfolio" class="portfolio" aria-label="Portfolio" style="opacity:1;">
-        <h2>Project</h2>
+        <h2>Portfolio</h2>
         <div class="projects-grid" role="list">
-          <!-- Your Expenses Tracker Project -->
           <article class="project-card" tabindex="0" role="listitem">
             <img class="project-image"
               src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=70"
@@ -415,7 +391,6 @@
               </div>
             </div>
           </article>
-          <!-- You can add more projects below! -->
         </div>
       </section>
 
@@ -459,17 +434,15 @@
       function downloadResume() {
         window.open('https://drive.google.com/file/d/1txm_7PwTQd3e6kXgRKAL-7ZfzYAJckDK/view?usp=drivesdk', '_blank', 'noopener,noreferrer');
       }
-      // Animate in on load (minimal JS since already set style="opacity:1;" for demo)
       window.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.profile, .skills, .portfolio, .contact-info').forEach(el => el.style.opacity = 1);
       });
-      // Active nav highlighting on scroll
       const navLinks = document.querySelectorAll('nav a');
       const sections = document.querySelectorAll('main section');
       window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100; // header height buffer
+          const sectionTop = section.offsetTop - 100;
           const sectionHeight = section.clientHeight;
           if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
