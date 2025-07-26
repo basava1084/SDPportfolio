@@ -2,127 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basavaraj H G — Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg-light: #f4f7fa;
+      --text-dark: #222;
+      --accent: #ec1250;
+      --accent-dark: #b10f3e;
+      --white: #fff;
     }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #f8f9fa, #eef1f5);
-      color: #2d2d2d;
-      line-height: 1.6;
-      padding: 30px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background: var(--bg-light);
+      margin: 0;
+      color: var(--text-dark);
+      padding: 0;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     .container {
-      max-width: 1000px;
-      width: 100%;
-      background: #ffffffee;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      padding: 40px 30px;
-      margin: 20px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
     }
     header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
     header h1 {
       font-size: 2.8rem;
-      color: #ec1250;
+      color: var(--accent);
     }
     header p {
       font-size: 1.2rem;
-      color: #4a4a4a;
-      margin-top: 10px;
+      color: #555;
     }
     .profile {
       display: flex;
       gap: 30px;
-      align-items: center;
       flex-wrap: wrap;
-      margin-bottom: 40px;
+      align-items: center;
+      margin-bottom: 50px;
     }
     .profile-img {
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #ec1250;
-      box-shadow: 0 4px 20px rgba(236, 18, 80, 0.4);
-    }
-    .profile-info {
-      flex: 1;
+      border: 4px solid var(--accent);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
     .profile-info h2 {
       font-size: 2rem;
-      color: #7a1e3f;
       margin-bottom: 15px;
+      color: var(--accent-dark);
     }
     .profile-info p {
-      font-size: 1.05rem;
-      color: #333;
+      font-size: 1.1rem;
     }
     .button {
       display: inline-block;
-      background: #ec1250;
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 40px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 28px;
       margin-top: 20px;
-      font-weight: 600;
+      border-radius: 40px;
       text-transform: uppercase;
+      font-weight: 600;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: background 0.3s ease;
     }
     .button:hover {
-      background: #b10f3e;
-      transform: translateY(-2px);
+      background: var(--accent-dark);
     }
-    .contact-info {
-      margin-top: 40px;
+    .skills, .projects, .contact {
+      margin-top: 50px;
     }
-    .contact-info h3 {
+    .skills h3, .projects h3, .contact h3 {
       font-size: 1.6rem;
       margin-bottom: 20px;
-      color: #b10f3e;
+      color: var(--accent-dark);
     }
-    .contact-item {
+    .skill {
       margin-bottom: 15px;
-      font-size: 1.1rem;
     }
-    .contact-item a {
-      color: #b10f3e;
-      text-decoration: none;
+    .skill span {
+      font-weight: 600;
     }
-    .contact-item a:hover {
-      text-decoration: underline;
+    .bar {
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 14px;
+      margin-top: 6px;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0;
+      transition: width 1s ease-in-out;
+    }
+    .project-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .project-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
     }
     footer {
-      margin-top: 40px;
       text-align: center;
-      color: #777;
+      margin-top: 60px;
       font-size: 0.95rem;
+      color: #777;
     }
-    @media (max-width: 768px) {
-      .profile {
-        flex-direction: column;
-        text-align: center;
-      }
-      .profile-img {
-        margin-bottom: 20px;
-      }
+    .toggle {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    body.dark-mode {
+      --bg-light: #111;
+      --text-dark: #eee;
+      --white: #222;
     }
   </style>
 </head>
 <body>
+  <button class="toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
   <div class="container">
     <header>
       <h1>Basavaraj H G</h1>
@@ -130,29 +153,56 @@
     </header>
 
     <section class="profile">
-      <img class="profile-img" src="your-photo.jpg" alt="Profile Photo of Basavaraj H G" />
+      <img src="your-photo.jpg" alt="Basavaraj H G" class="profile-img" />
       <div class="profile-info">
         <h2>About Me</h2>
-        <p>
-          I am a passionate web developer with a strong focus on modern UI design and functionality.
-          I love crafting seamless digital experiences with clean, intuitive interfaces using the latest technologies.
-        </p>
-        <a href="https://drive.google.com/file/d/1txm_7PwTQd3e6kXgRKAL-7ZfzYAJckDK/view?usp=drivesdk" target="_blank" class="button">Download Resume</a>
+        <p>I am a passionate web developer focused on clean, intuitive design and smooth user experience. I build websites with performance and elegance in mind.</p>
+        <a href="https://drive.google.com/file/d/1txm_7PwTQd3e6kXgRKAL-7ZfzYAJckDK/view?usp=drivesdk" class="button" target="_blank">Download Resume</a>
       </div>
     </section>
 
-    <section class="contact-info">
+    <section class="skills">
+      <h3>Skills</h3>
+      <div class="skill"><span>HTML & CSS</span><div class="bar"><div class="bar-fill" style="width: 95%"></div></div></div>
+      <div class="skill"><span>JavaScript</span><div class="bar"><div class="bar-fill" style="width: 85%"></div></div></div>
+      <div class="skill"><span>React</span><div class="bar"><div class="bar-fill" style="width: 80%"></div></div></div>
+      <div class="skill"><span>Python</span><div class="bar"><div class="bar-fill" style="width: 75%"></div></div></div>
+    </section>
+
+    <section class="projects">
+      <h3>Projects</h3>
+      <div class="project-grid">
+        <div class="project-card">
+          <h4>Salary Prediction App</h4>
+          <p>Built using Flask, Scikit-learn, and HTML/CSS. Predicts salaries based on job, education, and experience.</p>
+        </div>
+        <div class="project-card">
+          <h4>Portfolio Website</h4>
+          <p>Personal responsive portfolio built with pure HTML, CSS, and JavaScript, hosted on GitHub Pages.</p>
+        </div>
+        <div class="project-card">
+          <h4>To-Do List Web App</h4>
+          <p>A simple CRUD app using JavaScript with localStorage support and mobile responsiveness.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
       <h3>Contact Me</h3>
-      <div class="contact-item">📞 <a href="tel:+917411278970">+91 7411278970</a></div>
-      <div class="contact-item">📸 <a href="https://www.instagram.com/basava_1804" target="_blank">Instagram</a></div>
-      <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/basavaraj-h-g-565a51342" target="_blank">LinkedIn</a></div>
-      <div class="contact-item">🐱 <a href="https://github.com/basava1084" target="_blank">GitHub</a></div>
-      <div class="contact-item">✉️ <a href="mailto:basavarajhg8970@gmail.com">basavarajhg8970@gmail.com</a></div>
+      <p>Email: <a href="mailto:basavarajhg8970@gmail.com">basavarajhg8970@gmail.com</a></p>
+      <p>Phone: <a href="tel:+917411278970">+91 7411278970</a></p>
+      <p>GitHub: <a href="https://github.com/basava1084" target="_blank">basava1084</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/basavaraj-h-g-565a51342" target="_blank">View Profile</a></p>
     </section>
 
     <footer>
       <p>&copy; 2025 Basavaraj H G. All rights reserved.</p>
     </footer>
   </div>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
